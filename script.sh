@@ -1,0 +1,37 @@
+#!/bin/bash
+
+building(){
+
+compile(){
+  mkdir build
+  cd build
+  cmake ..
+  make
+  cp *.uf2 ~/Desktop #Change ~/Desktop to pico path /Volumes/Pico to autoload after compiling
+  cd ..
+  echo "Opening minicom..."
+  sleep 3 #Waiting for Pico to disconnect
+  minicom #Replace with Screen for mac
+}
+
+
+if [ -d build/  ]; then
+echo "Removing Build Directory"
+rm -rf build/
+  compile
+else
+echo "Creating Build Directory"
+  compile
+fi
+}
+
+
+if [ $# -eq 0 ]
+  then
+    building
+else
+echo "Anime Girl Incoming!"
+echo "閑けさや　岩にしみいる　蝉の声"
+open https://randomforme.com/anime_girl
+
+fi
