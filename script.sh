@@ -11,20 +11,26 @@ compile(){
   cd ..
   echo "Opening minicom..."
   sleep 3 #Waiting for Pico to disconnect
-  minicom #Replace with Screen for mac
+  minicom /dev/tty.usb* #Replace with Screen for mac
 }
-
+openscreen(){
+  cp *.uf2 ~/Desktop
+  echo "Opening minicom..."
+  sleep 2.5
+  screen /dev/tty.usb*
+}
 
 if [ -d build/  ]; then
 echo "Removing Build Directory"
-rm -rf build/
-  compile
+  cd build/
+  cmake ..
+  make
+  openscreen
 else
 echo "Creating Build Directory"
   compile
 fi
 }
-
 
 if [ $# -eq 0 ]
   then
