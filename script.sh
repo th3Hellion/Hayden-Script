@@ -26,6 +26,7 @@ echo "Removing Build Directory"
   cmake ..
   make
   openscreen
+  cd ..
 else
 echo "Creating Build Directory"
   compile
