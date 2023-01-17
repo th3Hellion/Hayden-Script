@@ -7,16 +7,16 @@ compile(){
   cd build
   cmake ..
   make
-  cp *.uf2 ~/Desktop #Change ~/Desktop to pico path /Volumes/Pico to autoload after compiling
+  cp *.uf2 ~/Volumes/Pico
   cd ..
   echo "Opening minicom..."
-  sleep 3 #Waiting for Pico to disconnect
-  minicom /dev/tty.usb* #Replace with Screen for mac
+  sleep 2 #Waiting for Pico to disconnect
+  screen /dev/tty.usb* #minicom or putty also works
 }
 openscreen(){
-  cp *.uf2 ~/Desktop
+  cp *.uf2 ~/Volumes/Pico
   echo "Opening minicom..."
-  sleep 2.5
+  sleep 2
   screen /dev/tty.usb*
 }
 
