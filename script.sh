@@ -33,12 +33,4 @@ echo "Creating Build Directory"
 fi
 }
 
-if [ $# -eq 0 ]
-  then
-    building
-else
-echo "Anime Girl Incoming!"
-echo "閑けさや　岩にしみいる　蝉の声"
-open https://randomforme.com/anime_girl
-
 fi
